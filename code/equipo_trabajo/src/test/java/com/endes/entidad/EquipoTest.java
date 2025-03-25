@@ -14,7 +14,6 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.miempresa.entidad.Producto;
 
 class EquipoTest {
 
@@ -36,7 +35,7 @@ class EquipoTest {
             "No debería lanzarse excepción al añadir un miembro único");
 
         // Segundo miembro con mismo DNI → debe lanzar excepción
-        IllegalArgumentException exception = assertThrows(
+        assertThrows(
             IllegalArgumentException.class,
             () -> equipo.añadirMiembro(devDuplicado),
             "Se esperaba una excepción por DNI duplicado"
